@@ -10,7 +10,7 @@ const BlogListing = () => {
 
     const fetchBlogs = async () => {
         const response = await axios
-        .get("http://localhost:5000/")
+        .get("https://applore-blog-app-api.herokuapp.com/")
         .then((res) => {
             console.log(res)
             dispatch(setBlogs(res.data));

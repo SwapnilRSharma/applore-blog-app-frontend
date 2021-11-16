@@ -21,7 +21,7 @@ function BlogsTable(props) {
         if(props.value == "blogs"){
             setLoading(true);
             const response = await axios
-            .get(`http://localhost:5000/`)
+            .get(`https://applore-blog-app-api.herokuapp.com/`)
             .then((response) => {
                 console.log(response)
                 console.log(response.data )
@@ -40,7 +40,7 @@ function BlogsTable(props) {
             setLoading(true);
             setData([])
             const response = await axios
-            .get(`http://localhost:5000/admin/deleted-blogs`, {
+            .get(`https://applore-blog-app-api.herokuapp.com/admin/deleted-blogs`, {
                 headers: {
                   Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
                 }})
@@ -63,7 +63,7 @@ function BlogsTable(props) {
             setLoading(true);
             setData([])
             const response = await axios
-            .get(`http://localhost:5000/admin/pending-blogs`, {
+            .get(`https://applore-blog-app-api.herokuapp.com/admin/pending-blogs`, {
                 headers: {
                   Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
                 }})
@@ -86,7 +86,7 @@ function BlogsTable(props) {
             setLoading(true);
             setData([])
             const response = await axios
-            .get(`http://localhost:5000/user/blogs`, {
+            .get(`https://applore-blog-app-api.herokuapp.com/user/blogs`, {
                 headers: {
                   Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
                 }})
@@ -96,6 +96,7 @@ function BlogsTable(props) {
                 users = response.data;
                 setData(response.data)
                 setLoading(false)
+                
                 // dispatch(selectedBlog(response.data));
                
             })
@@ -110,7 +111,7 @@ function BlogsTable(props) {
     async function approveBlog(id)
     {
         const response = await axios
-        .get(`http://localhost:5000/admin/approve-blog/${id}`, {
+        .get(`https://applore-blog-app-api.herokuapp.com/admin/approve-blog/${id}`, {
             headers: {
                 Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
             }})
@@ -134,7 +135,7 @@ function BlogsTable(props) {
     async function deleteBlog(id)
     {
         const response = await axios
-        .get(`http://localhost:5000/admin/delete-blog/${id}`, {
+        .get(`https://applore-blog-app-api.herokuapp.com/admin/delete-blog/${id}`, {
             headers: {
                 Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
             }})
@@ -166,7 +167,7 @@ function BlogsTable(props) {
             
                 <tr>
                 <td>{item.title}</td>
-                <td>{item.description}</td>
+                <td className={"td"}>{item.description}</td>
                 <td>
                     
                 {props.value=='pending'? 
@@ -197,7 +198,7 @@ function BlogsTable(props) {
             <thead>
                 <tr>
                 <th scope="col">Title</th>
-                <th scope="col">Description</th>
+                <th className={"td"} scope="col">Description</th>
                 {(props.value != "deleted" || props.value != "user-blogs" )  ?   <th scope="col">Action</th> :<></> } 
                 </tr>
             </thead>

@@ -13,11 +13,11 @@ const ViewBlog = (props) => {
     const user = useSelector((state) => state.user);
 
     const fetchBlogDetail = async (id) => {
-    const headers = {
-        Authorization: "Bearer " + user.user.token
-    }
+    // const headers = {
+    //     Authorization: "Bearer " + user.user.token
+    // }
         const response = await axios
-          .get(`http://localhost:5000/admin/view-blog/${id}`, { headers } )
+          .get(`https://applore-blog-app-api.herokuapp.com/admin/view-blog/${id}`)
           .then((response) => {
             console.log(response)
             dispatch(selectedBlog(response.data));

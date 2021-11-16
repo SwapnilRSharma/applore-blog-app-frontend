@@ -13,7 +13,7 @@ const BlogDetail = () => {
 
     const fetchBlogDetail = async (id) => {
         const response = await axios
-          .get(`http://localhost:5000/${id}`)
+          .get(`https://applore-blog-app-api.herokuapp.com/${id}`)
           .then((response) => {
             console.log(response)
             dispatch(selectedBlog(response.data));

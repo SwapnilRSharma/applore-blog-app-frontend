@@ -31,7 +31,7 @@ function CreateForm() {
             Authorization: "Bearer " + user.user.token
         }
         const response = await axios
-            .post(`http://localhost:5000/admin/user`, data , { headers } )
+            .post(`https://applore-blog-app-api.herokuapp.com/admin/user`, data , { headers } )
             .then((response) => {
                 setLoading(false)
                 alert('User Added.')

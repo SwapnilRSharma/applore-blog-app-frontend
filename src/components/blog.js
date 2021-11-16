@@ -23,7 +23,7 @@ const Blog = () => {
                         <h5 className="card-title">{title}</h5>
                     </div>
                 </div> */}
-                <Card sx={{ maxWidth: 345 }} style={{height : "270px"}}>
+                <Card sx={{ maxWidth: 345 }} style={{height : "270px", marginBottom: "18px"}}>
                      <CardMedia
                      component="img"
                      height="200"

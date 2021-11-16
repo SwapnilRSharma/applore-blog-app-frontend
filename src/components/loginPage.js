@@ -29,7 +29,7 @@ const LoginPage = () => {
             console.log(userType.value)
             setLoading(true);
             const response = await axios
-            .post(`http://localhost:5000/user/login`, {
+            .post(`https://applore-blog-app-api.herokuapp.com/user/login`, {
                 email: email,
                 password: password,
                 user_type: userType.value

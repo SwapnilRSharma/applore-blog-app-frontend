@@ -23,7 +23,7 @@ function DataTable(props) {
         if(props.value == "users"){
             setLoading(true);
             const response = await axios
-            .get(`http://localhost:5000/admin/users`, {
+            .get(`https://applore-blog-app-api.herokuapp.com/admin/users`, {
                 headers: {
                   Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
                 }})
@@ -44,7 +44,7 @@ function DataTable(props) {
             setDeleted(false)
             setLoading(true);
             const response = await axios
-            .get(`http://localhost:5000/admin/users`, {
+            .get(`https://applore-blog-app-api.herokuapp.com/admin/users`, {
                 headers: {
                   Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
                 }})
@@ -76,7 +76,7 @@ function DataTable(props) {
     async function deleteUser(id)
     {
         const response = await axios
-        .get(`http://localhost:5000/admin/delete-user/${id}`, {
+        .get(`https://applore-blog-app-api.herokuapp.com/admin/delete-user/${id}`, {
             headers: {
                 Authorization: 'Bearer ' + user.user.token//the token is a variable which holds the token
             }})

@@ -27,7 +27,7 @@ function CreateForm() {
             Authorization: "Bearer " + user.user.token
         }
         const response = await axios
-            .post(`http://localhost:5000/user/submit-blog`, data , { headers } )
+            .post(`https://applore-blog-app-api.herokuapp.com/user/submit-blog`, data , { headers } )
             .then((response) => {
                 setLoading(false)
                 alert('Blog Submitted.')
